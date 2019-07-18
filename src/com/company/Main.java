@@ -10,8 +10,30 @@ public class Main {
 //        System.out.println(isGanjilGenap(0));
 //        System.out.println(bilanganPrima(15));
 //        System.out.println(showGanjils(15));
-        System.out.println(showPrimas(15));
+//        System.out.println(showPrimas(15));
+        System.out.println(joinString("123", "00000"));
 
+    }
+
+    public static String joinString(String a, String b){
+        char[] pertama = a.toCharArray();
+        char[] kedua = b.toCharArray();
+        String persatuan = "";
+        int lengtUtama = pertama.length;
+
+        if (pertama.length < kedua.length){
+            lengtUtama = kedua.length;
+        }
+        for (int i=0; i<lengtUtama; i++){
+            if (i >= pertama.length){
+                persatuan = persatuan + kedua[i];
+            } else if (i >= kedua.length){
+                persatuan = persatuan + pertama[i];
+            } else {
+                persatuan = persatuan + pertama[i] + kedua[i];
+            }
+        }
+        return persatuan;
     }
 
     public static ArrayList<Integer> showPrimas (int angkae){
